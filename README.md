@@ -1,7 +1,8 @@
 XML2JSON
 ========
 
-Python script converts XML to JSON or the other way around
+Python script converts XML to JSON or the other way around using this standard for xml to json mapping:
+http://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html
 
 Usage
 -----
