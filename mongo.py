@@ -227,7 +227,19 @@ class MongoDict(MongoBase):
 
 		self.close()
 		
+	def add(self, doc):
+		name = self.dictName
+		mTag = self.mTag
+		db = self.db
+		conn = self.conn
+		verbose = self.verbose
 		
+		if conn:
+			
+			print doc,'\n'		
+			db[name].insert(doc)
+		
+# verbose is set to true
 class Mongo(MongoDict):
 	def __init__(self, host=None, port=None, db=None, default_collection='default'):
 		# dict name, persistant, host, port, db, verbose
