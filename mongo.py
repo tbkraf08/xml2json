@@ -236,7 +236,7 @@ class MongoDict(MongoBase):
 		
 		if conn:
 			
-			print doc,'\n'		
+			print self.mTag, 'added:', doc,'\n'		
 			db[name].insert(doc)
 		
 # verbose is set to true
