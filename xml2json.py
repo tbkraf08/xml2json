@@ -46,6 +46,11 @@ def elem_to_internal(elem, strip=1):
 
     d = {}
     for key, value in list(elem.attrib.items()):
+        # dont want values that are just '  \n  '
+        value = value.strip()
+        if not value:
+            continue
+
         d['@' + key] = value
 
     # loop over subelements to merge them
@@ -72,12 +77,14 @@ def elem_to_internal(elem, strip=1):
             tail = tail.strip()
 
     if tail:
-        d['#tail'] = tail
+        if tail.strip(): 
+			d['#tail'] = tail
 
     if d:
         # use #text element if other attributes exist
         if text:
-            d["#text"] = text
+			if text.strip():
+				d["#text"] = text
     else:
         # text is the value if no attributes
         d = text or None
