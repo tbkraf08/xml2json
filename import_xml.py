@@ -53,7 +53,7 @@ class Import_XML(Mongo):
 				for item in data[split]:
 					self.add(item)
 def main(args):
-	xml = Import_XML('caprica.uncc.edu','27017','xml', 'wiki')
+	xml = Import_XML(args['-h'],args['-p'],args['-d'], args['-c'])
 	
 	if '-f' in args:
 		root = None
