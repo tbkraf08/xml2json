@@ -1,3 +1,17 @@
+Import XML to Mongo
+===================
+
+To import an XML file from the command line:
+
+    $ python import_xml.py -f XML_FILE -s SPLIT_VARIABLE -r ROOT_VARIABLE -h MONGO_HOST -p MONGO_PORT -d MONGO_DATABASE -c MONGO_COLLECTION
+
+
+URL1 = http://msdn.microsoft.com/en-us/library/windows/desktop/ms762271(v=vs.85).aspx
+
+Given the XML doc in URL1, the root_variable would be 'catalog' and the split_variable would be 'book'
+this allows the program to break up the xml document into multiple json files by locating the correct position of datafields
+
+
 XML2JSON
 ========
 
